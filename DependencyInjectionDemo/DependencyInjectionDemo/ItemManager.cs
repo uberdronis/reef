@@ -27,10 +27,15 @@ namespace DependencyInjectionDemo
         public void PrintAllItems()
         {
             List<Item> items = _itemLogic.GetAllItems();
-            foreach(Item i in items)
+
+            printToConsole(String.Empty);
+            printToConsole("Printing List of Items...");
+            printToConsole("(DB) Id - Name (Price / BulkPrice)");
+
+            foreach(Item item in items)
             {
-                printToConsole(String.Format("({0}) {1} - {2} (${3}/${4}).",
-                        i.DatabaseTechnology, i.Id, i.Name, i.Price, i.BulkPrice));
+                printToConsole(String.Format("({0}) {1} - {2} ({3:C} / {4:C})",
+                        item.DatabaseTechnology, item.Id, item.Name, item.Price, item.BulkPrice));
             }
         }
 
@@ -40,9 +45,14 @@ namespace DependencyInjectionDemo
         public void PrintItemsAndPrices()
         {
             Dictionary<string, float> items = _itemLogic.GetItemNamesAndPrices();
+
+            printToConsole(String.Empty);
+            printToConsole("Printing Items and their prices...");
+            printToConsole("Item - Price");
+
             foreach (KeyValuePair<string, float> item in items)
             {
-                printToConsole(String.Format("{0} - ${1}", item.Key, item.Value));
+                printToConsole(String.Format("{0} - {1:C}", item.Key, item.Value));
             }
         }
 

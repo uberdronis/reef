@@ -14,16 +14,9 @@ namespace DependencyInjectionDemo
         {
             IKernel _kernel = Bootstrapper.Initialize();
 
-            if (args.Count() > 0)
-            {
-                ItemManager im = new ItemManager(_kernel.Get<IItemLogic>());
-
-                // First let's print a list of all items
-                im.PrintAllItems();
-
-                // Now, let's print a list of the item names and prices
-                im.PrintItemsAndPrices();
-            }
+            ItemManager im = new ItemManager(_kernel.Get<IItemLogic>());
+            im.PrintAllItems();
+            im.PrintItemsAndPrices();
         }
     }
 }
