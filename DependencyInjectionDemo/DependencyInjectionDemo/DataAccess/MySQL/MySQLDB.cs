@@ -1,5 +1,6 @@
 ﻿using DependencyInjectionDemo.Common;
 using DependencyInjectionDemo.Models;
+using DependencyInjectionDemo.Models.Enums;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -55,10 +56,11 @@ namespace DependencyInjectionDemo.DataAccess.MySQL
             foreach(DataRow dr in dt.Rows)
             {
                 result.Add(new Item() { 
+                    DatabaseTechnology = DatabaseTechnologyEnum.MySQL,
                     Id = Int32.Parse(dr["Id"].ToString()),
                     Name = dr["Name"].ToString(),
-                    Price = float.Parse(dr["Price"].ToString()),
-                    BulkPrice = float.Parse(dr["BulkPrice"].ToString()),
+                    Price = decimal.Parse(dr["Price"].ToString()),
+                    BulkPrice = decimal.Parse(dr["BulkPrice"].ToString()),
                     CreatedDate = DateTime.Parse(dr["CreatedDate"].ToString()),
                     CreatedUser = dr["CreatedUser"].ToString() });
             }

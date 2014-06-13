@@ -45,7 +45,7 @@ namespace DependencyInjectionDemo.DomainLogic
         /// Returns a collection of Items and their price (default behavior)
         /// </summary>
         /// <returns>Dictionary containing Items and Prices</returns>
-        public Dictionary<string, float> GetItemNamesAndPrices()
+        public Dictionary<string, decimal> GetItemNamesAndPrices()
         {
             return _dbStore.GetAllItems()
                 .ToDictionary(x => x.Name, x => x.Price);

@@ -44,13 +44,13 @@ namespace DependencyInjectionDemo
         /// </summary>
         public void PrintItemsAndPrices()
         {
-            Dictionary<string, float> items = _itemLogic.GetItemNamesAndPrices();
+            Dictionary<string, decimal> items = _itemLogic.GetItemNamesAndPrices();
 
             printToConsole(String.Empty);
             printToConsole("Printing Items and their prices...");
             printToConsole("Item - Price");
 
-            foreach (KeyValuePair<string, float> item in items)
+            foreach (KeyValuePair<string, decimal> item in items)
             {
                 printToConsole(String.Format("{0} - {1:C}", item.Key, item.Value));
             }

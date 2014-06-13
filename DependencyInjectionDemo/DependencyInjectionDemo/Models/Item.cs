@@ -18,11 +18,11 @@
         /// <summary>
         /// Price for the item on a normal basis;
         /// </summary>
-        public float Price { get; set; }
+        public decimal Price { get; set; }
 
         /// <summary>
         /// Bulk Price for the item.  Applies to specific customers;
         /// </summary>
-        public float BulkPrice { get; set; }
+        public decimal BulkPrice { get; set; }
     }
 }

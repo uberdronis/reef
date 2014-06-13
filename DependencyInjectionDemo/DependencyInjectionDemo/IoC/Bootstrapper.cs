@@ -25,9 +25,9 @@ namespace DependencyInjectionDemo.IoC
         private static void RegisterBindings(IKernel kernel)
         {
             // Data Store Bindings
-            kernel.Bind<IDBDirector>().To<SQLServerDB>();
+            //kernel.Bind<IDBDirector>().To<SQLServerDB>();
             //kernel.Bind<IDBDirector>().To<RavenDB>();
-            //kernel.Bind<IDBDirector>().To<MySQLDB>();
+            kernel.Bind<IDBDirector>().To<MySQLDB>();
 
             // Logic Bindings
             kernel.Bind<IItemLogic>().To<ItemLogic>();

@@ -10,6 +10,6 @@ namespace DependencyInjectionDemo.DomainLogic.Interfaces
     {
         List<Item> GetAllItems();
         Item GetItemById(int id);
-        Dictionary<string, float> GetItemNamesAndPrices();
+        Dictionary<string, decimal> GetItemNamesAndPrices();
     }
 }

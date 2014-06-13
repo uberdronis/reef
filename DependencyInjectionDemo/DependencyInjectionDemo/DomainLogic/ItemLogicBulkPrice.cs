@@ -42,7 +42,7 @@ namespace DependencyInjectionDemo.DomainLogic
         /// Returns a collection of Items and their BULK PRICE!  Custom Logic!
         /// </summary>
         /// <returns>Dictionary containing Items and Prices</returns>
-        public Dictionary<string, float> GetItemNamesAndPrices()
+        public Dictionary<string, decimal> GetItemNamesAndPrices()
         {
             return _dbStore.GetAllItems()
                 .ToDictionary(x => x.Name, x => x.BulkPrice);
